@@ -2,7 +2,8 @@ import styled, { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
 :root{
-  --midgrey: #e0e0e0;
+  --cloud: #e0e0e0;
+  --sky: #1bbfd0;
 }
 html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, a, img, i,ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, footer, header,nav, section {
 	margin: 0;
@@ -29,6 +30,11 @@ body{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+img {
+      display: inline-block;
+      width: 100%;
+      height: auto;
+    }
 ol, ul {
 	list-style: none;
 }
@@ -37,6 +43,13 @@ ol, ul {
 const AppStyles = styled.div`
   position: relative;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  background-color: #ffffff;
 `;
 
 export default AppStyles;
