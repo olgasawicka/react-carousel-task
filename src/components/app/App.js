@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import data from "../../data/data";
+import Carousel from "../carousel/Carousel";
 import AppStyles, { GlobalStyles } from "./AppStyles";
 
 const App = () => {
+  const [slidesData, setSlidesData] = useState(null);
+
+  useEffect(() => {
+    setSlidesData(data);
+  }, []);
+
   return (
     <>
       <GlobalStyles />
-      <AppStyles>Main wrapper</AppStyles>
+      <AppStyles>
+        <Carousel slidesData={slidesData} />
+      </AppStyles>
     </>
   );
 };
