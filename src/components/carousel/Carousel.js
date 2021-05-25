@@ -7,7 +7,7 @@ const Carousel = ({ slidesData }) => {
   return (
     <CarouselStyles>
       {slidesData.map((slide) => (
-        <Slide slide={slide} />
+        <Slide key={slide.id} slide={slide} />
       ))}
     </CarouselStyles>
   );
