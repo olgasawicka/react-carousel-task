@@ -4,6 +4,7 @@ export const GlobalStyles = createGlobalStyle`
 :root{
   --cloud: #e0e0e0;
   --sky: #1bbfd0;
+  --sunset: #f57c00;
 }
 html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, a, img, i,ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, footer, header,nav, section {
 	margin: 0;
@@ -49,7 +50,7 @@ const AppStyles = styled.div`
   height: 100vh;
   padding: 0;
   margin: 0;
-  background-color: #ffffff;
+  background-color: var(--sunset);
 `;
 
 export default AppStyles;

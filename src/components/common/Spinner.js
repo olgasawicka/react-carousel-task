@@ -2,7 +2,7 @@ import React from "react";
 import GridLoader from "react-spinners/GridLoader";
 
 const Spinner = () => (
-  <div>
+  <div data-testid="spinner">
     <GridLoader color={"var(--sky)"} />
   </div>
 );

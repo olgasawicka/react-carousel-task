@@ -18,9 +18,10 @@ const Carousel = ({ slidesData }) => {
   };
 
   return (
-    <CarouselStyles maxWidth={slideWidth * 2}>
+    <CarouselStyles data-testid="carousel" maxWidth={slideWidth * 2}>
       <div className="slider">
         <div
+          data-testid="slider-wrapper"
           className="slider-wrapper"
           style={{
             transform: `translateX(calc(-${
@@ -33,9 +34,10 @@ const Carousel = ({ slidesData }) => {
             const isActive = currentSlide.id === id;
             const isNext = index === currSlideIndex + 1;
             const isPrev = index === currSlideIndex - 1;
-            let slideStyles = isActive ? "active" : null;
+            let slideStyles = isActive ? "active" : "";
             slideStyles = isPrev ? "prev" : slideStyles;
             slideStyles = isNext ? "next" : slideStyles;
+
             return (
               <Slide
                 key={id}

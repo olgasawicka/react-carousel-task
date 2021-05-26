@@ -78,6 +78,14 @@ const SlideStyles = styled.div`
       &[disabled] {
         cursor: initial;
       }
+      &:hover:enabled{
+        & #Shape {
+          fill: var(--sky);
+        }
+        & #Path, & #Combined-Shape {
+          fill: #000;
+        }
+      }
     }
   }
 `;

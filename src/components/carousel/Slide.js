@@ -41,7 +41,12 @@ const Slide = ({ slide, currentSlideId, className, isActive, onClick }) => {
 
   return (
     <>
-      <SlideStyles ref={slideRef} className={className} onClick={handleClick}>
+      <SlideStyles
+        ref={slideRef}
+        className={className}
+        onClick={handleClick}
+        data-testid="slide"
+      >
         <img src={slideBorder} alt="Slide border" className="slide-border" />
         <div className="slide-bg">
           <img src={slideBg} alt="Slide background" />
@@ -53,7 +58,8 @@ const Slide = ({ slide, currentSlideId, className, isActive, onClick }) => {
           <AudioControlBtn
             onBtnClick={handlePlayerClick}
             icon={isPlaying ? PauseBtn : PlayBtn}
-            isDisabled={!isActive && !isPlaying ? true : null}
+            isDisabled={!isActive && !isPlaying}
+            dataTestId={isPlaying ? "pause-btn" : "play-btn"}
           />
         </div>
       </SlideStyles>
@@ -61,11 +67,11 @@ const Slide = ({ slide, currentSlideId, className, isActive, onClick }) => {
   );
 };
 
-const { string, object, func, bool } = PropTypes;
+const { string, number, object, func, bool } = PropTypes;
 
 Slide.propTypes = {
   slide: object.isRequired,
-  currentSlideId: string.isRequired,
+  currentSlideId: number.isRequired,
   className: string.isRequired,
   isActive: bool.isRequired,
   onClick: func,
