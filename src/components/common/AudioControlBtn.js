@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const AudioControlBtn = ({ onBtnClick, icon }) => {
+const AudioControlBtn = ({ onBtnClick, icon, isDisabled }) => {
   return (
-    <button onClick={onBtnClick}>
+    <button onClick={onBtnClick} disabled={isDisabled}>
       {icon}
     </button>
   );
@@ -12,10 +12,12 @@ const AudioControlBtn = ({ onBtnClick, icon }) => {
 AudioControlBtn.propTypes = {
   onBtnClick: PropTypes.func,
   icon: PropTypes.node.isRequired,
+  isDisabled: PropTypes.bool,
 };
 
 AudioControlBtn.defaultProps = {
-  onBtnClick: () => {}
+  onBtnClick: () => {},
+  isDisabled: false,
 };
 
 export default AudioControlBtn;
